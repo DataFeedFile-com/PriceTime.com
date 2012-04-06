@@ -6,7 +6,8 @@ PriceTime.com is built and maintained by <a href="http://datafeedfile.com" targe
 
 ### FAQ / General Howto
 
-- I want to edit the home page or a search result page...how do I do that?
+- **I want to edit the home page or a search result page...how do I do that?**
+
 Generally, most modifications can be accomplished by editing the template files inside `/pricetime/application/view`. This folder contains the templates for the home/landing page (home.php), the search result page (search.php), as well as certain sections, such as the left menu (left-menu.php) where the attributes are listed.
 
 ### Advanced Information
