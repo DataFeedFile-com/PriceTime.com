@@ -21,7 +21,7 @@ Generally, most modifications can be accomplished by editing the template files 
 
 ### MIT License
 
-Copyright (c) 2008-2012 Bitsonnet
+Copyright (c) 2008-2012 DataFeedFile.com
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
