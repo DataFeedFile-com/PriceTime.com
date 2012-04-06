@@ -41,3 +41,16 @@
         </form>
       </div>
       <div class="debug"><?=(!empty($query) ? $query : '')?></div>
+      <? if( $page != 'home' ) { ?>
+        <div class="center-ad">
+          <script type="text/javascript"><!--
+            google_ad_client = "ca-pub-9302935271891976";
+            /* pricetime_top_leaderboard_image */
+            google_ad_slot = "2117985343";
+            google_ad_width = 728;
+            google_ad_height = 90;
+            //-->
+          </script>
+          <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+        </div>
+      <? } ?>

@@ -2,12 +2,17 @@
 
 <a href="http://pricetime.com" target="_blank"><img src="https://github.com/DataFeedFile-com/PriceTime.com/raw/master/pricetime-ss.png"></a>
 
-PriceTime.com is powered by <a href="http://datafeedfile.com" target="_blank">DataFeedFile.com</a>, and is intended as an example use of our API and using it to build a mostly complete product search site, used to deliver product shopping data / price comparison shopping data for affiliates. We use typical web <a href="http://en.wikipedia.org/wiki/Representational_state_transfer">REST</a> services technologies in combination with common data formats such as JSON and XML..
+PriceTime.com is powered by <a href="http://datafeedfile.com" target="_blank">DataFeedFile.com</a>, and is intended as an example use of our API and using it to build a mostly complete product search site, used to deliver product shopping data / price comparison shopping data for affiliates. We use typical web <a href="http://en.wikipedia.org/wiki/Representational_state_transfer">REST</a> services technologies in combination with common data formats such as JSON and XML.
 
 ### FAQ / General Howto
 
 - I want to edit the home page or a search result page...how do I do that?
+
 Generally, most modifications can be accomplished by editing the template files inside `/pricetime/application/view`. This folder contains the templates for the home/landing page (home.php), the search result page (search.php), as well as certain sections, such as the left menu (left-menu.php) where the attributes are listed.
+
+- How can I control the styling of the site?
+
+Other than structural changes, which should be done in the templates listed above...the CSS file is located in `/pricetime/css/style.css`.
 
 ### Advanced Information
 

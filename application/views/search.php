@@ -38,7 +38,7 @@
           </div>
         </div>
 
-        <? if( !empty( $results ) ) { ?>
+        <? if( !empty( $results ) ) { $count = 0; ?>
           <? foreach( $results['productlist'] as $result ) { ?>
             <?
             if( $result['corenum'] == 0 ) {
@@ -49,23 +49,37 @@
               $product_url = "/product/compare/{$result['corenum']}";
             }
             ?>
-            <div class="product clearfix block">
-              <img class="main" src="<?=$result['imgurl']?>" />
-              <? if( !empty( $result['shortdesc'] ) ) { ?><div class="short-desc"> <?=$result['shortdesc']?> </div> <? } ?>
-              <div class="mer-info">
-                <? if( !empty( $result['mernum'] ) ) { ?><img class="mer-logo" src="http://cimages.datafeedfile.com/images/merimages/<?=$result['mernum']?>/<?=$result['mernum']?>_image1.gif" /> <? } ?>
-                <? if( !empty( $result['mernum'] ) ) { ?><div class="merchant"><span><?=$result['mername']?></span></div> <? } ?>
+            <? if( $count++ == intval( intval($_GET['limit']) / 2) ) { ?>
+              <div class="ad">
+                <script type="text/javascript"><!--
+                  google_ad_client = "ca-pub-9302935271891976";
+                  /* pricetime_middle_leaderboard_text */
+                  google_ad_slot = "3820339932";
+                  google_ad_width = 728;
+                  google_ad_height = 90;
+                  //-->
+                </script>
+                <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
               </div>
-              <? if( !empty( $result['longdesc'] ) ) { ?>
-                <div class="description">
-                  <div class="content"><?=$result['longdesc']?></div>
+            <? } else { ?>
+              <div class="product clearfix block">
+                <img class="main" src="<?=$result['imgurl']?>" />
+                <? if( !empty( $result['shortdesc'] ) ) { ?><div class="short-desc"> <?=$result['shortdesc']?> </div> <? } ?>
+                <div class="mer-info">
+                  <? if( !empty( $result['mernum'] ) ) { ?><img class="mer-logo" src="http://cimages.datafeedfile.com/images/merimages/<?=$result['mernum']?>/<?=$result['mernum']?>_image1.gif" /> <? } ?>
+                  <? if( !empty( $result['mernum'] ) ) { ?><div class="merchant"><span><?=$result['mername']?></span></div> <? } ?>
                 </div>
-                <button class="expand button"><span>See full description...</span></button>
-              <? } ?>
-              <div class="price"> $<?=number_format( $result['prdtprice'], 2 )?> </div>
-              <? $result['sellercount'] = ( isset( $result['sellercount'] ) ? $result['sellercount'] : 0 ); ?>
-              <a href="<?=$product_url?>" class="more-info-button"> <span><?=($core ? "Compare from {$result['sellercount']} stores" : 'More Info')?></span> </a>
-            </div>
+                <? if( !empty( $result['longdesc'] ) ) { ?>
+                  <div class="description">
+                    <div class="content"><?=$result['longdesc']?></div>
+                  </div>
+                  <button class="expand button"><span>See full description...</span></button>
+                <? } ?>
+                <div class="price"> $<?=number_format( $result['prdtprice'], 2 )?> </div>
+                <? $result['sellercount'] = ( isset( $result['sellercount'] ) ? $result['sellercount'] : 0 ); ?>
+                <a href="<?=$product_url?>" class="more-info-button"> <span><?=($core ? "Compare from {$result['sellercount']} stores" : 'More Info')?></span> </a>
+              </div>
+            <? } ?>
           <? } ?>
         <? } ?>
 
