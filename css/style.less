@@ -27,6 +27,51 @@ body {
   font: 13px 'Droid Sans', sans-serif;
 }
 
+footer.home {
+  padding-top: 20px;
+  text-align: center;
+  display: block;
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+footer.other {
+  clear: both;
+  text-align: left;
+  display: block;
+  border: 1px solid #EFE5A0;
+  .radius(5px 5px 0 0);
+  background: rgb(254,252,234);
+  background: -moz-linear-gradient(top, rgba(254,252,234,1) 0%, rgba(239,229,160,1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(254,252,234,1)), color-stop(100%,rgba(239,229,160,1)));
+  background: -webkit-linear-gradient(top, rgba(254,252,234,1) 0%,rgba(239,229,160,1) 100%);
+  background: -o-linear-gradient(top, rgba(254,252,234,1) 0%,rgba(239,229,160,1) 100%);
+  background: -ms-linear-gradient(top, rgba(254,252,234,1) 0%,rgba(239,229,160,1) 100%);
+  background: linear-gradient(top, rgba(254,252,234,1) 0%,rgba(239,229,160,1) 100%);
+  height: 53px;
+  position: relative;
+
+  .dff-link {
+    display: block;
+    float: left;
+    margin-left: 10px;
+  }
+  .copyright-info {
+    display: block;
+    position: absolute;
+    top: 25px;
+    text-align: center;
+    width: 100%;
+  }
+  .license {
+    display: block;
+    float: right;
+    margin: 12px 10px 0 0;
+  }
+}
+
 .block {
   display: block;
 }
@@ -36,6 +81,16 @@ body {
   margin: 0 auto;
   & > .container {
     padding: 10px 0 20px;
+  }
+}
+
+.signup-button {
+  display: block;
+  width: 100px;
+  margin: 0 auto;
+  color: black;
+  &:hover {
+    text-decoration: none;
   }
 }
 
@@ -118,7 +173,6 @@ body {
   margin-top: 10px;
   padding: 10px;
   & > .title {
-    width: 100%;
     font-weight: bold;
     color: #666;
     font-size: 15px;
@@ -126,6 +180,18 @@ body {
     div {
       padding: 10px;
     }
+  }
+  .title {
+    background: url('/images/ribbon.png') no-repeat left top;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    height: 38px;
+    line-height: 30px;
+    padding-left: 16px;
+    width: 230px;
+    position: relative;
+    left: -17px;
   }
 
   & > .selected-items {
@@ -135,7 +201,6 @@ body {
     }
     a {
       &:hover {
-        text-decoration: none;
         .box-shadow(0 1px 3px -1px black);
       }
       &:active {
@@ -164,11 +229,6 @@ body {
   #categories-list {
     & > .category {
       clear: both;
-      & > .title {
-        color: #444;
-        font-weight: bold;
-        font-size: 11px;
-      }
       & > .categories {
         .category {
           display: block;
@@ -183,12 +243,6 @@ body {
     .facet-list {
       max-height: 300px;
       overflow: auto;
-    }
-
-    .title {
-      color: #444;
-      font-weight: bold;
-      font-size: 11px;
     }
 
     .facet {
@@ -234,6 +288,10 @@ input[name=keyword] {
   .result-count {
     float: left;
     line-height: 25px;
+    em {
+      font-style: normal;
+      font-weight: bold;
+    }
   }
 
   .top-control {
@@ -252,8 +310,8 @@ input[name=keyword] {
     a {
       &:hover, &.active {
         text-decoration: none;
-        background: #d2d2d2;
-        color: black;
+        background: #6F8EB0;
+        color: #fff;
       }
       padding: 3px 5px;
       .radius(3px);
@@ -484,6 +542,18 @@ body.search {
 
     .mer-info {
       float: right;
+      position: relative;
+      top: 20px;
+      text-align: right;
+      img {
+        float: right;
+        display: block;
+        clear: both;
+        margin-right: 0;
+      }
+      .merchant {
+        clear: both;
+      }
     }
     .merchant {
       color: #555;
@@ -506,8 +576,8 @@ body.search {
     }
     .button {
       position: absolute;
-      left: 120px;
-      bottom: 15px;
+      left: 140px;
+      bottom: 10px;
       display: none;
 
       &.visible {

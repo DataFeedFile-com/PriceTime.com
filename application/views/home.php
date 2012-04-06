@@ -1,7 +1,7 @@
       <div class="container">
 
         <div class="search-box small-wrapper">
-          <blockquote>Compare prices from <em>38+ million</em> products ...</blockquote>
+          <blockquote>Compare prices from <em>138+ million</em> products ...</blockquote>
           <form action="/search" method="get">
             <div class="input-container">
               <input type="text" name="keyword" id="keyword" placeholder="" class="focus" />
@@ -16,7 +16,7 @@
             <div class="body item">
                 Want your own price comparison store? Open yours and start making money today. For free!
             </div>
-            <button class="button">Join Now!</button>
+            <a class="signup-button button" href="https://www.datafeedfile.com/join_affiliate_signup.php">Join Now!</a>
           </div>
 
           <div class="signup">
@@ -24,7 +24,7 @@
             <div class="body item">
                 Got Products? We've got affiliates! Get your products out there. It's free!
             </div>
-            <button class="button">Join Now!</button>
+            <a class="signup-button button" href="https://www.datafeedfile.com/join_merchant_signup.php">Join Now!</a>
           </div>
         </div>
 

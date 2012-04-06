@@ -1,7 +1,7 @@
       <div class="container">
 
         <div class="results-bar clearfix block">
-          <div class="result-count">Showing <?=number_format($_GET['offset'] + 1)?> through <?=number_format($_GET['offset'] + $_GET['limit'])?> of <?=number_format($results['product_count'])?> results</div>
+          <div class="result-count">Showing <em><?=number_format($_GET['offset'] + 1)?> through <?=number_format($_GET['offset'] + $_GET['limit'])?></em> of <?=number_format($results['product_count'])?> results</div>
 
           <div class="top-control">
             <div class="label">Sort by: </div>
@@ -49,12 +49,12 @@
               $product_url = "/product/compare/{$result['corenum']}";
             }
             ?>
-            <a class="product clearfix block" href="<?=$product_url?>">
+            <div class="product clearfix block">
               <img class="main" src="<?=$result['imgurl']?>" />
               <? if( !empty( $result['shortdesc'] ) ) { ?><div class="short-desc"> <?=$result['shortdesc']?> </div> <? } ?>
               <div class="mer-info">
                 <? if( !empty( $result['mernum'] ) ) { ?><img class="mer-logo" src="http://cimages.datafeedfile.com/images/merimages/<?=$result['mernum']?>/<?=$result['mernum']?>_image1.gif" /> <? } ?>
-                <? if( !empty( $result['mernum'] ) ) { ?><div class="merchant">Brand: <span><?=$result['mername']?></span></div> <? } ?>
+                <? if( !empty( $result['mernum'] ) ) { ?><div class="merchant"><span><?=$result['mername']?></span></div> <? } ?>
               </div>
               <? if( !empty( $result['longdesc'] ) ) { ?>
                 <div class="description">
@@ -64,8 +64,8 @@
               <? } ?>
               <div class="price"> $<?=number_format( $result['prdtprice'], 2 )?> </div>
               <? $result['sellercount'] = ( isset( $result['sellercount'] ) ? $result['sellercount'] : 0 ); ?>
-              <button href="" class="more-info-button"> <span><?=($core ? "Compare from {$result['sellercount']} stores" : 'More Info')?></span> </button>
-            </a>
+              <a href="<?=$product_url?>" class="more-info-button"> <span><?=($core ? "Compare from {$result['sellercount']} stores" : 'More Info')?></span> </a>
+            </div>
           <? } ?>
         <? } ?>
 

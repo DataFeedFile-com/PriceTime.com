@@ -10,7 +10,7 @@
     } ?>
     <? if( $cats ) { ?>
       <div class="section">
-        <div class="title">Categories</div>
+        <div class="normal-title">Selected Categories</div>
         <? for( $x = 1; $x <= 3; $x++ ) { ?>
           <? if( isset( $_GET["cat{$x}num"] ) ) { ?>
             <a title="click to remove" class="selected-category" href="/search?<?=paramFilter( array( "cat{$x}num", "cat{$x}name", "page", "limit", "offset" ), false )?>"><span><?=$_GET["cat{$x}name"]?></span></a>
@@ -22,7 +22,7 @@
     <!-- Selected manufacturers -->
     <? if( isset( $_GET["mfgnum"] ) ) { ?>
       <div class="section">
-        <div class="title">Manufacturers</div>
+        <div class="normal-title">Selected Manufacturers</div>
         <a title="click to remove" class="selected-category" href="/search?<?=paramFilter( array( "mfgnum", "mfgname", "page", "limit", "offset" ), false )?>"><span><?=$_GET["mfgname"]?></span></a>
       </div>
     <? } ?>
@@ -30,7 +30,7 @@
     <!-- Selected price range -->
     <? if( isset( $_GET["pricelow"] ) ) { ?>
       <div class="section">
-        <div class="title">Price Range</div>
+        <div class="normal-title">Selected Price Range</div>
         <a title="click to remove" class="selected-category" href="/search?<?=paramFilter( array( "pricelow", "pricehigh", "pricename", "page", "limit", "offset" ), false )?>"><span><?=$_GET["pricename"]?></span></a>
       </div>
     <? } ?>
@@ -43,7 +43,7 @@
     <div id="categories-list">
       <? foreach( $categories as $catLevel => $categories ) { ?>
         <div class="category" id="<?=$catLevel?>">
-          <div class="title"> Category <?=preg_replace("/[^0-9,.]/", "", $catLevel)?> </div>
+          <div class="title"> Categories </div>
           <div class="categories clearfix">
             <? foreach( $categories as $catNum => $category ) { ?>
               <a href="/search?<?=$catLevel?>num=<?=$catNum?>&<?=$catLevel?>name=<?=urlencode($category)?><?=paramFilter( array( "{$catLevel}num", "{$catLevel}name", "page", "limit", "offset" ) )?>" class="category cat<?=$catNum?>" data-num="<?=$catNum?>"><?=$category?></a>
